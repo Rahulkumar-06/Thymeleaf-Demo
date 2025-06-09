@@ -104,7 +104,7 @@ spring.h2.console.enabled=true
 
 ---
 ## Authentication Page
-![Authentication Page](screenshots/default authentication.png)
+![Authentication Page](screenshots/defaultauthentication.png)
 
 ---
 
