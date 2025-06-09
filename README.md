@@ -68,7 +68,7 @@ Ensure you have the following installed:
 #### 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/your-repo-name.git
+git clone https://github.com/Rahulkumar-06/Thymeleaf-Demo.git
 cd your-repo-name
 ```
 ### 2. Update application properties
