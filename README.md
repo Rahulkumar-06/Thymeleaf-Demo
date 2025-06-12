@@ -96,24 +96,25 @@ spring.h2.console.enabled=true
 ---
 ## Registration Page :
 
-![Registration Page](screenshot\registerationpage.png)
+![Registration Page](screenshot/registerationpage.png)
 
 ---
 ## Home Page :
-![Home Page](screenshot\homepage.png)
+![Home Page](screenshot/homepage.png)
 
 ---
 ## Login Page :
-![Authentication Page](screenshot\loginpage.png)
+![Authentication Page](screenshot/loginpage.png)
 
 ---
 
 ## List Page :
 
-![List Page](screenshot\All-list-content.png)
+![List Page](screenshot/All-list-content.png)
 
 ---
 
 ## Cloud Deployed Project
 
-#### Link:  <a> 13.221.201.127:8080 </a>
+#### Link:  
+<a> 13.221.201.127:8080 </a>
