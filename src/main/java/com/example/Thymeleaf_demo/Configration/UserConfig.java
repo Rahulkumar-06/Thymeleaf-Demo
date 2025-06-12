@@ -26,12 +26,20 @@ public class UserConfig {
     public SecurityFilterChain filter(HttpSecurity http) throws Exception {
         http
                 .csrf(AbstractHttpConfigurer::disable)
-                .authorizeHttpRequests(requst->requst.requestMatchers("login","register")
+                .authorizeHttpRequests(requst->requst.requestMatchers("register","/css/**", "/js/**")
                         .permitAll()
                         .anyRequest()
                         .authenticated())
-                .httpBasic(Customizer.withDefaults())
-                .sessionManagement(section->section.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
+                .formLogin(form -> form
+                        .loginPage("/login")        // Custom login page
+                        .defaultSuccessUrl("/home", true)
+                        .permitAll()
+                )
+                .logout(logout -> logout
+                        .logoutSuccessUrl("/login?logout")
+                        .permitAll()
+                );
+                //.sessionManagement(section->section.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
             return http.build();
     }
     @Bean
@@ -45,6 +53,4 @@ public class UserConfig {
         provider.setPasswordEncoder(new BCryptPasswordEncoder(12));
         return provider;
     }
-
-
 }

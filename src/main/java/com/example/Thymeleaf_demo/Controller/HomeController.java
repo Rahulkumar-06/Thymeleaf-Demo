@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/")
 public class HomeController {
     private ContentGateWay repo;
     @Autowired
@@ -19,10 +18,15 @@ public class HomeController {
         this.repo = repo;
     }
 
-    @GetMapping("")
+    @GetMapping("/")
+    public String root() {
+        return "redirect:/home";
+    }
+
+    @GetMapping("/home")
     public String showForm(Model model) {
         model.addAttribute("content", new Content());
-        return "content-form";
+        return "home";
     }
 
     @PostMapping("/content/save")

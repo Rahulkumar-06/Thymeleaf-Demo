@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Content</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(to right, #e3f2fd, #fce4ec);
+        }
+
+        .form-control:focus {
+            border-color: #80bdff;
+            box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+        }
+
+        .card {
+            border: none;
+        }
+
+        h2 {
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container d-flex align-items-center justify-content-center min-vh-100">
+    <div class="card shadow-lg rounded-4 w-100" style="max-width: 700px;">
+        <div class="card-header bg-primary text-white text-center rounded-top-4">
+            <h2 class="my-2">Create New Content</h2>
+        </div>
+        <div class="card-body px-4 py-5">
+
+            <!-- View All Contents Button -->
+            <div class="mb-4 text-end">
+                <a th:href="@{/content/list}" class="btn btn-outline-primary">
+                    View All Contents
+                </a>
+            </div>
+
+            <form th:action="@{/content/save}" th:object="${content}" method="post" class="needs-validation" novalidate>
+
+                <div class="mb-4">
+                    <label for="title" class="form-label">Title</label>
+                    <input type="text" th:field="*{title}" class="form-control" id="title" placeholder="Enter title" required>
+                    <div class="invalid-feedback">Title is required.</div>
+                </div>
+
+                <div class="mb-4">
+                    <label for="author" class="form-label">Author</label>
+                    <input type="text" th:field="*{author}" class="form-control" id="author" placeholder="Your name">
+                </div>
+
+                <div class="mb-4">
+                    <label for="body" class="form-label">Content</label>
+                    <textarea th:field="*{body}" class="form-control" id="body" rows="6" placeholder="Write your content here..." required></textarea>
+                    <div class="invalid-feedback">Content body is required.</div>
+                </div>
+
+                <div class="text-center">
+                    <button type="submit" class="btn btn-success px-5">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    (() => {
+        'use strict';
+        const forms = document.querySelectorAll('.needs-validation');
+        Array.from(forms).forEach(form => {
+            form.addEventListener('submit', event => {
+                if (!form.checkValidity()) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
+                form.classList.add('was-validated');
+            }, false);
+        });
+    })();
+</script>
+
+</body>
+</html>

@@ -9,12 +9,19 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
-public class UserController {
+public class AuthController {
     private GateWay repo;
     @Autowired
     public void setRepo(GateWay repo) {
         this.repo = repo;
     }
+
+    @GetMapping("/login")
+    public String loginPage() {
+        return "login";
+    }
+
+
     @GetMapping("/register")
             public String reg(Model model){
         model.addAttribute("user",new users());

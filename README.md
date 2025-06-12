@@ -94,21 +94,26 @@ spring.h2.console.enabled=true
 - ListContent : http://localhost:8080/content/list
 
 ---
-## Registration Page 
+## Registration Page :
 
-![Registration Page](screenshots/UserRegister.png)
-
----
-## Home Page
-![Home Page](screenshots/Home.png)
+![Registration Page](screenshot\registerationpage.png)
 
 ---
-## Authentication Page
-![Authentication Page](screenshots/defaultauthentication.png)
+## Home Page :
+![Home Page](screenshot\homepage.png)
+
+---
+## Login Page :
+![Authentication Page](screenshot\loginpage.png)
 
 ---
 
-## List Page
+## List Page :
 
-![List Page](screenshots/List.png)
+![List Page](screenshot\All-list-content.png)
 
+---
+
+## Cloud Deployed Project
+
+#### Link:  <a> 13.221.201.127:8080 </a>
